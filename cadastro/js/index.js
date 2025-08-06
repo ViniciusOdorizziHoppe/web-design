@@ -9,6 +9,15 @@ function validar(){
    if(nome === '' || nome === undefined || nome === null){
        camposComProblemas.push("Campo nome não preenchido.") 
    }
+   if(telefone === '' || telefone === undefined || telefone === null){
+       camposComProblemas.push("Campo telefone não preenchido.") 
+   }
+   if(endereco === '' || endereco === undefined || endereco === null){
+       camposComProblemas.push("Campo endereco não preenchido.") 
+   }
+   if(instagram === '' || instagram === undefined || instagram === null){
+       camposComProblemas.push("Campo instagram não preenchido.") 
+   }
    alert(camposComProblemas);
    //colocar o restante das validações   
 }
