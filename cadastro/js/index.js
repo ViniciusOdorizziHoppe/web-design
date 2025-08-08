@@ -1,3 +1,6 @@
+//escrever a lógica para adicionar os contatos novos 
+//na tela após clicar em salvar.
+
 function validar(){   
    var nome = document.querySelector("#nome").value;
    var telefone = document.querySelector("#telefone").value;
@@ -18,6 +21,5 @@ function validar(){
    if(instagram === '' || instagram === undefined || instagram === null){
        camposComProblemas.push("Campo instagram não preenchido.") 
    }
-   alert(camposComProblemas);
-   //colocar o restante das validações   
+   alert(camposComProblemas);   
 }

@@ -3,12 +3,17 @@
      src: url("../fonts/SF-Pro.ttf");
 }
 
-
 .formulario {    
     text-align: center;    
     background-color: gainsboro;
     width: 100%;
-    height: 100%;
+    height: 50%;
+}
+
+.tabelaContatos {    
+    text-align: center;    
+    background-color: gainsboro;
+    width: 100%;    
 }
 
 .campos-formulario {    
