@@ -9,22 +9,27 @@ function validar(){
    
    var camposComProblemas = [];
    //validações:
-   if(nome === '' || nome === undefined || nome === null){
-       camposComProblemas.push("Campo nome não preenchido.") 
-   }
-   if(telefone === '' || telefone === undefined || telefone === null){
-       camposComProblemas.push("Campo telefone não preenchido.") 
-   }
-   if(endereco === '' || endereco === undefined || endereco === null){
-       camposComProblemas.push("Campo endereco não preenchido.") 
-   }
-   if(instagram === '' || instagram === undefined || instagram === null){
-       camposComProblemas.push("Campo instagram não preenchido.") 
-   }
-   //alert(camposComProblemas);   
-   AdicionarNaTela();
+       if(nome === '' || nome === undefined || nome === null){
+           camposComProblemas.push("Campo nome não preenchido.")   
+       }
+       if(telefone === '' || telefone === undefined || telefone === null){
+           camposComProblemas.push("Campo telefone não preenchido.")   
+       }
+       if(endereco === '' || endereco === undefined || endereco === null){
+           camposComProblemas.push("Campo endereco não preenchido.")
+       }
+       if(instagram === '' || instagram === undefined || instagram === null){
+           camposComProblemas.push("Campo instagram não preenchido.") 
+       }
+       
+    if (camposComProblemas.length >0) {
+        alert(camposComProblemas)
+    } else {
+        AdicionarNaTela(nome,endereco,telefone,instagram)
+    }
+
 }
-function AdicionarNaTela(){    
+function AdicionarNaTela(nome,endereco,telefone,instagram){    
     var tabela = document.querySelector('#tabela');    
     var body = tabela.querySelector('#corpoTabela');     
     var linha = document.createElement('tr');
@@ -33,10 +38,10 @@ function AdicionarNaTela(){
     var tdTelefone = document.createElement('td');
     var tdInstagram = document.createElement('td');
 
-    tdEndereco.innerText = "Rua Pres. Getúlio Vargas";
-    tdNome.innerText = "Jonathan Suter";
-    tdTelefone.innerText = "47 99999999";
-    tdInstagram.innerText = "jvsuter";
+    tdEndereco.innerText = endereco;
+    tdNome.innerText = nome;
+    tdTelefone.innerText = telefone;
+    tdInstagram.innerText = instagram;
 
     linha.appendChild(tdNome);
     linha.appendChild(tdEndereco);
