@@ -1,7 +1,8 @@
 //escrever a lógica para adicionar os contatos novos 
 //na tela após clicar em salvar.
-
-function validar(){   
+var contador = 0;
+function validar(elemento){    
+   
    var nome = document.querySelector("#nome").value;
    var telefone = document.querySelector("#telefone").value;
    var endereco = document.querySelector("#endereco").value;
@@ -33,10 +34,16 @@ function AdicionarNaTela(nome, endereco, telefone, instagram){
     var tabela = document.querySelector('#tabela');    
     var body = tabela.querySelector('#corpoTabela');     
     var linha = document.createElement('tr');
+    linha.setAttribute("id","_"+contador);
+    linha.setAttribute("onclick","alterarValores(this);");
     var tdNome = document.createElement('td');
+    tdNome.classList.add("nome");
     var tdEndereco = document.createElement('td');
+    tdEndereco.classList.add("endereco");
     var tdTelefone = document.createElement('td');
+    tdTelefone.classList.add("telefone");
     var tdInstagram = document.createElement('td');
+    tdInstagram.classList.add("instagram");
 
     //adicionar os valores dos campos;
     tdEndereco.innerText = endereco;
@@ -50,4 +57,25 @@ function AdicionarNaTela(nome, endereco, telefone, instagram){
     linha.appendChild(tdInstagram);
 
     body.appendChild(linha);
+    contador++;
+}
+
+function alterarValores(elemento){
+   //pega os campos da tela;
+   var campoNome = document.querySelector("#nome");
+   var campotelefone = document.querySelector("#telefone");
+   var campoendereco = document.querySelector("#endereco");
+   var campoinstagram = document.querySelector("#instagram");
+   var elementoAtual =  document.querySelector("#elementoUtilizado").value;
+
+   var valorAtualNome = elemento.querySelector(".nome").innerText;
+   var valorAtualEndereco = elemento.querySelector(".endereco").innerText;
+   var valorAtualTelefone = elemento.querySelector(".telefone").innerText;
+   var valorAtualInstagram = elemento.querySelector(".instagram").innerText;
+   
+   //atribui os valores nos campos
+   campoNome.value = valorAtualNome;
+   campoendereco.value = valorAtualEndereco;
+   campotelefone.value = valorAtualTelefone;
+   campoinstagram.value = valorAtualInstagram;
 }
