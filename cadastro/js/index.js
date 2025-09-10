@@ -1,8 +1,9 @@
 //escrever a lógica para adicionar os contatos novos 
 //na tela após clicar em salvar.
 var contador = 0;
+var linhaEmEdição = null;
 function validar(elemento){    
-   
+    
    var nome = document.querySelector("#nome").value;
    var telefone = document.querySelector("#telefone").value;
    var endereco = document.querySelector("#endereco").value;
@@ -24,7 +25,12 @@ function validar(elemento){
    }
    
    if(camposComProblemas.length == 0){
-        AdicionarNaTela(nome, endereco,telefone,instagram);
+       if(linhaEmEdição) {
+        atualizarLinha(linhaEmEdição,nome,endereco,telefone,instagram)
+        linhaEmEdição = null;
+       }else {
+        AdicionarNaTela(instagram,nome,endereco,telefone)
+       }
    }   
    else {
     alert(camposComProblemas);
@@ -78,4 +84,25 @@ function alterarValores(elemento){
    campoendereco.value = valorAtualEndereco;
    campotelefone.value = valorAtualTelefone;
    campoinstagram.value = valorAtualInstagram;
+
+  
+   console.log(valorAtualNome)
+   console.log(valorAtualEndereco)
+   console.log(valorAtualTelefone)
+   console.log(valorAtualInstagram) 
+   console.log(elementoAtual)
+
+   linhaEmEdição = elemento.id
 }
+
+
+function atualizarLinha(id,nome,endereco,telefone,instagram) {
+    let linha = document.getElementById(id)
+
+    linha.querySelector(".nome").innerText = nome;
+    linha.querySelector(".endereco").innerText = endereco;
+    linha.querySelector(".telefone").innerText = telefone;
+    linha.querySelector(".instagram").innerText = instagram;
+
+}
+  
