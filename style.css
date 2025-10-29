@@ -1,0 +1,37 @@
+body {
+    padding: 0;
+   margin: 0;
+   background-color: rgb(255, 255, 255);
+}
+
+.tec {
+    display: flex;
+}
+img {
+    
+    width: 5em;
+}
+header {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    width: 100%;
+    height: 3em;
+    top: 0;
+    background-color: rgb(61, 5, 27);
+    margin-bottom: 2em;
+    h2{
+        color: aliceblue;
+          font-family: "Noto Sans JP", sans-serif;
+    }
+}
+main {
+    margin-top: 4em;
+    h3{
+        font-family: "Noto Sans JP", sans-serif;
+    }
+    p{
+         font-family: "Noto Sans JP", sans-serif;
+    }
+}
