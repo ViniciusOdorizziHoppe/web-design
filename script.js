@@ -3,10 +3,23 @@ function verGitHub() {
 }
 
 
-function Redicionar() {
+function Redirecionar() {
     
-var a = `Você Será direcionado em ${sec} segundos`
+var segundos = 5
 var texto = document.getElementById("texto")
 
-set
+texto.innerText = `Você será direcionado em ${segundos} segundos`
+
+const intervalo = setInterval(() => {
+        segundos--;
+        texto.innerText = `Você será direcionado em ${segundos} segundos`;
+
+        if (segundos <= 0) {
+            clearInterval(intervalo);
+            texto.innerText = "Redirecionando...";
+            
+           
+             window.location.href = "index.html";
+        }
+    }, 1000);
 }
